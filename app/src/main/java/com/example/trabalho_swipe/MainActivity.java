@@ -35,16 +35,14 @@ public class MainActivity extends AppCompatActivity implements EstadoQuestaoList
             @Override
             public void onSwipeBottom() {
                 super.onSwipeBottom();
-                questaoController.respondeNao(currentQuestion);
-                currentQuestion = questaoController.recuperaProximaQuestao();
+                currentQuestion = questaoController.respondeNao();
                 tvSwipe.setText(currentQuestion.pergunta);
             }
 
             @Override
             public void onSwipeTop() {
                 super.onSwipeTop();
-                questaoController.respondeSim(currentQuestion);
-                currentQuestion = questaoController.recuperaProximaQuestao();
+                currentQuestion = questaoController.respondeSim();
                 tvSwipe.setText(currentQuestion.pergunta);
             }
 
@@ -86,9 +84,13 @@ public class MainActivity extends AppCompatActivity implements EstadoQuestaoList
 
     @Override
     public void ExibeAlertComAcertos() {
-        Toast.makeText(this, "voce acertou" +
-                questaoController.recuperaQuantidadeAcertos().toString()
-                + " de " + questaoController.recuperaQuantidadeTotal().toString(), Toast.LENGTH_LONG).show();
+        String acertos = questaoController.recuperaQuantidadeAcertos().toString();
+        String total = questaoController.recuperaQuantidadeTotal().toString();
+
+            Toast.makeText(this, "voce acertou " +
+                    acertos
+                    + " de " + total, Toast.LENGTH_LONG).show();
+
     }
 
 }

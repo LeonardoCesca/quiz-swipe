@@ -4,8 +4,8 @@ public interface QuestaoController {
     void initRepository();
     Questao recuperaProximaQuestao();
     Questao recuperaQuestaoAnterior();
-    void respondeSim(Questao questao);
-    void respondeNao(Questao questao);
+    Questao respondeSim();
+    Questao respondeNao();
     Integer recuperaQuantidadeAcertos();
     Integer recuperaQuantidadeTotal();
 }

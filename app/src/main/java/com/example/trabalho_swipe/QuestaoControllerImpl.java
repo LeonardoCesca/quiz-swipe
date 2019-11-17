@@ -19,13 +19,17 @@ public class QuestaoControllerImpl implements QuestaoController {
     @Override
     public void initRepository() {
 
-        Questao questao1 = new Questao("pergunta 1", Resposta.NAO);
-        Questao questao2 = new Questao("pergunta 2", Resposta.SIM);
-        Questao questao3 = new Questao("pergunta 3", Resposta.NAO);
+        Questao questao1 = new Questao("O sistema Android é código aberto?", Resposta.SIM);
+        Questao questao2 = new Questao("A primeira versão oficial do Android foi a Cupcake?", Resposta.SIM);
+        Questao questao3 = new Questao("A ultima versão do Android foi a Honeycomb?", Resposta.NAO);
+        Questao questao4 = new Questao("O Android foi criado pela Google?", Resposta.SIM);
+        Questao questao5 = new Questao("O projeto do Android começou em 2002?", Resposta.NAO);
 
         questoesRepository.add(questao1);
         questoesRepository.add(questao2);
         questoesRepository.add(questao3);
+        questoesRepository.add(questao4);
+        questoesRepository.add(questao5);
         listSize = questoesRepository.size();
     }
 
